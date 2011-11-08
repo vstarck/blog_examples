@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Criptografia :: Codigo Cesar</title>
+    <style type="text/css">
+        li {
+            list-style: none;
+            font-family: Verdana, Helvetica, serif;
+            border: solid 1px #ccc;
+            padding: 5px;
+            margin: 10px;
+            width: 900px;
+        }
+    </style>
+    <script type="text/javascript" src="caesar_cipher.js"></script>
+</head>
+<body>
+<ul id="result"></ul>
+<script type="text/javascript">
+    function print(text) {
+        document.getElementById('result').innerHTML += '<li>' + text + '</li>';
+    }
+
+    print('Translate "Hello World", 3 -> ' + CaesarCipher.translate('Hello World', 3));
+    print('Translate "Khoor Zruog", -3 -> ' + CaesarCipher.translate('Khoor Zruog', -3));
+
+    var cipher = new CaesarCipher('tres tristes tigres comian trigo en un trigal');
+
+    print('Translate "Hello World" [key:tres tristes tigres comian trigo en un trigal] -> ' + cipher.encrypt('Hello World'));
+    print('Translate "Xcmmh Qhbmv" [key:tres tristes tigres comian trigo en un trigal] -> ' + cipher.decrypt('Xcmmh Qhbmv'));
+
+</script>
+</body>
+</html>
